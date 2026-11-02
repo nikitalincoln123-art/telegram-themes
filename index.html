@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TGThemes — Темы и плагины для Telegram, ExtraGram, AyuGram</title>
+<meta name="description" content="Каталог кастомных тем (.attheme) и плагинов (.plugin) для Telegram, ExtraGram и AyuGram. Скачай и сделай свой мессенджер уникальным.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<header class="site">
+  <div class="container">
+    <div class="brand">TG<span>Themes</span><em>.io</em></div>
+    <nav>
+      <a href="#themes">Темы</a>
+      <a href="#plugins">Плагины</a>
+      <a href="#make">Создать</a>
+      <a href="#howto">Установка</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="#themes">Скачать</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">Сделай свой Telegram неповторимым</div>
+    <h1>Темы и плагины,<br>которых больше нигде <span class="accent-grad">нет</span></h1>
+    <p>Авторские кастомные темы для Telegram, ExtraGram и AyuGram. Один клик — и интерфейс полностью твой.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#themes">Смотреть темы</a>
+      <a class="btn btn-ghost" href="#make">Хочу свою</a>
+    </div>
+    <div class="hero-stats">
+      <div><b>5</b><span>тем</span></div>
+      <div><b>50+</b><span>плагинов в экосистеме</span></div>
+      <div><b>100%</b><span>бесплатно</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- THEMES -->
+<section class="section" id="themes">
+  <div class="container">
+    <div class="section-head">
+      <h2>Каталог тем</h2>
+      <a class="link-arrow" href="themes.html">Все темы →</a>
+    </div>
+
+    <div class="theme-showcase">
+      <div class="theme-browser">
+        <div class="browser-top"><span></span><span></span><span></span><i>tgthemes.io / themes</i></div>
+        <div class="browser-body">
+          <div class="phone-frame" id="phone-frame">
+            <div class="phone-header">
+              <div class="ph-avatar"></div>
+              <div>
+                <div class="ph-name" id="ph-name">Мария</div>
+                <div class="ph-status" id="ph-status">была недавно</div>
+              </div>
+              <div class="ph-icons">⋯</div>
+            </div>
+            <div class="phone-chat">
+              <div class="pmsg in"><span id="ph-in1">Привет! Как дела?</span><em id="ph-in1-t">19:02</em></div>
+              <div class="pmsg out"><span id="ph-out1">Привет! Всё отлично 👋</span><em id="ph-out1-t">19:03</em></div>
+              <div class="pmsg in"><span id="ph-in2">Вот это тема, огонь 🔥</span><em id="ph-in2-t">19:04</em></div>
+              <div class="pmsg out"><span id="ph-out2">Это моя новая сборка 😎</span><em id="ph-out2-t">19:05</em></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="theme-picker">
+        <h3>Выбери свою тему</h3>
+        <p>Живое превью. Нажми — и посмотри, как выглядит интерфейс до скачивания.</p>
+        <div class="picker-list" id="picker-list"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLUGINS -->
+<section class="section alt" id="plugins">
+  <div class="container">
+    <div class="section-head">
+      <h2>Плагины для ExtraGram и AyuGram</h2>
+      <a class="link-arrow" href="plugins.html">Все плагины →</a>
+    </div>
+    <div class="grid" id="plugins-grid"></div>
+  </div>
+</section>
+
+<!-- MAKE / CTA -->
+<section class="section cta" id="make">
+  <div class="container">
+    <div class="cta-box">
+      <div class="cta-icon">🎨</div>
+      <h2>Не нашёл тему под себя?</h2>
+      <p>Каталог пополняется. Хочешь свою уникальную тему или плагин — напиши, соберём под тебя персонально.</p>
+      <a class="btn btn-primary" href="#howto">Начать</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOWTO -->
+<section class="section" id="howto">
+  <div class="container">
+    <div class="section-head"><h2>Как установить</h2></div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <b>Скачай файл</b>
+          <span>.attheme для темы или .plugin для плагина</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <b>Отправь себе в Telegram</b>
+          <span>во вкладку «Избранное»</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <b>Открой вложением</b>
+          <span>и нажми «Применить» — готово</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot"><div class="container">TGThemes.io · Каталог тем и плагинов для Telegram, ExtraGram, AyuGram</div></footer>
+
+<script>
+// ---------- THEMES ----------
+const THEMES = [
+  { id:"cyan", name:"Dark Cyan", file:"themes/dark-cyan.attheme", img:"images/theme-preview-cyan.jpg",
+    colors:["#0a0a0c","#1a1a1e","#40d9c0","#ff3b30"],
+    p:{ bg:"#0a0a0c", header:"#0d0d0f", in:"#1a1a1e", out:"#40d9c0", text:"#e8e8e8", outText:"#0d0d0f", name:"#40d9c0", status:"#9aa4b2" } },
+  { id:"violet", name:"Dream Violet", file:"themes/dream-violet.attheme", img:"images/theme-preview-violet.jpg",
+    colors:["#0a0a0f","#1b1b24","#8b7bff","#ff3b30"],
+    p:{ bg:"#0a0a0f", header:"#0d0d12", in:"#1b1b24", out:"#8b7bff", text:"#eceaf3", outText:"#0d0d12", name:"#8b7bff", status:"#a9a2c4" } },
+  { id:"mint", name:"Mint Green", file:"themes/mint-green.attheme", img:"images/theme-preview-cyan.jpg",
+    colors:["#090d0a","#172019","#3ddc84","#ff3b30"],
+    p:{ bg:"#090d0a", header:"#0c100d", in:"#172019", out:"#3ddc84", text:"#e6f2e9", outText:"#071007", name:"#3ddc84", status:"#9fb8a6" } },
+  { id:"amber", name:"Sunset Amber", file:"themes/sunset-amber.attheme", img:"images/theme-preview-amber.jpg",
+    colors:["#100d0a","#1d1710","#ffb347","#ff6b47"],
+    p:{ bg:"#0c0a07", header:"#100d0a", in:"#1d1710", out:"#ffb347", text:"#f3e9dc", outText:"#120c04", name:"#ffb347", status:"#b8a48c" } },
+  { id:"frost", name:"Frost Blue", file:"themes/frost-blue.attheme", img:"images/theme-preview-frost.jpg",
+    colors:["#080c11","#152229","#5ac8ff","#ff5a5a"],
+    p:{ bg:"#080c11", header:"#0b0f14", in:"#152229", out:"#5ac8ff", text:"#dfe9f3", outText:"#07121c", name:"#5ac8ff", status:"#759db5" } }
+];
+
+// ---------- PLUGINS ----------
+const PLUGINS = [
+  { name:"Starter Template", cat:"Шаблон", ver:"1.0.0", file:"plugins/starter-template.plugin",
+    desc:"Стартовый шаблон плагина для ExtraGram/AyuGram. Идеален, чтобы начать свои разработки.",
+    tag:"Наш пример" },
+  { name:"MonoColor UI", cat:"Интерфейс", ver:"1.7",
+    desc:"Перекрашивает интерфейс в один тон: аватарки, списки, плашки.",
+    author:"@limeplug" },
+  { name:"Media Glow", cat:"Интерфейс", ver:"1.3",
+    desc:"Ambilight-свечение по краям полноэкранных фото и видео.",
+    author:"@itskotovski" },
+  { name:"Text Animation", cat:"Анимации", ver:"11.0",
+    desc:"Живой набор текста: скольжение, масштаб, частицы.",
+    author:"@itskotovski" }
+];
+
+// ---------- RENDER THEME PICKER ----------
+const picker = document.getElementById('picker-list');
+picker.innerHTML = THEMES.map(t =>
+  '<button class="pick" data-id="'+t.id+'">' +
+    '<div class="pick-swatches">'+t.colors.map(c=>'<i style="background:'+c+'"></i>').join('')+'</div>' +
+    '<div class="pick-name">'+t.name+'</div>' +
+    '<div class="pick-size">'+(t.file?'скачать':'')+'</div>' +
+  '</button>').join('');
+
+// ---------- LIVE PHONE PREVIEW ----------
+function applyTheme(t) {
+  const f = document.getElementById('phone-frame');
+  f.style.background = t.p.bg;
+  f.querySelector('.phone-header').style.background = t.p.header;
+  f.querySelector('.ph-name').style.color = t.p.name;
+  document.getElementById('ph-status').style.color = t.p.status;
+  const msgs = f.querySelectorAll('.pmsg');
+  msgs.forEach(m => {
+    const isOut = m.classList.contains('out');
+    m.querySelector('span').style.background = isOut ? t.p.out : t.p.in;
+    m.querySelector('span').style.color = isOut ? t.p.outText : t.p.text;
+    m.querySelector('em').style.color = isOut ? t.p.outText : '#8a8f98';
+  });
+  document.querySelectorAll('.pick').forEach(b => b.classList.toggle('active', b.dataset.id === t.id));
+}
+picker.addEventListener('click', e => {
+  const btn = e.target.closest('.pick');
+  if (!btn) return;
+  const t = THEMES.find(x => x.id === btn.dataset.id);
+  if (t) applyTheme(t);
+});
+applyTheme(THEMES[0]);
+
+// ---------- RENDER PLUGINS ----------
+document.getElementById('plugins-grid').innerHTML = PLUGINS.map(p =>
+  '<div class="card">'+
+    '<div class="card-top"><span class="card-cat">'+p.cat+'</span>'+(p.tag?'<span class="card-tag">'+p.tag+'</span>':'')+'</div>'+
+    '<div class="card-title">'+p.name+'</div>'+
+    '<div class="card-desc">'+p.desc+'</div>'+
+    '<div class="card-foot">'+
+      (p.author?'<span class="card-meta">'+p.author+' · v'+p.ver+'</span>':'<span class="card-meta">v'+p.ver+'</span>')+
+      (p.file?'<a class="btn btn-primary btn-xs" href="'+p.file+'" download>Скачать</a>':'<a class="btn btn-ghost btn-xs" href="plugins.html">Скоро</a>')+
+    '</div>'+
+  '</div>').join('');
+</script>
+</body>
+</html>

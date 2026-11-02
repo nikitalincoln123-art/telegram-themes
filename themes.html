@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Каталог тем — TGThemes</title>
+<meta name="description" content="Каталог кастомных тем .attheme для Telegram, ExtraGram и AyuGram. Скачай бесплатно.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="container">
+    <div class="brand">TG<span>Themes</span><em>.io</em></div>
+    <nav>
+      <a href="index.html#themes">Темы</a>
+      <a href="plugins.html">Плагины</a>
+      <a href="index.html#make">Создать</a>
+      <a href="index.html#howto">Установка</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="index.html#howto">Как установить</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">Каталог тем</div>
+    <h1>Авторские темы <span class="accent-grad">.attheme</span></h1>
+    <p>Формат работают в Telegram (Desktop/Android), ExtraGram и AyuGram. Тёмные, контрастные, продуманные до мелочей.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><h2>Все темы</h2><span class="card-meta" id="themes-count">…</span></div>
+    <div class="theme-picker" style="margin-bottom:30px">
+      <div class="picker-list" id="picker-list"></div>
+    </div>
+    <div class="grid" id="themes-grid"></div>
+  </div>
+</section>
+
+<footer class="foot"><div class="container">TGThemes.io · Каталог тем и плагинов для Telegram, ExtraGram, AyuGram</div></footer>
+
+<script>
+const THEMES = [
+  { id:"cyan", name:"Dark Cyan", file:"themes/dark-cyan.attheme", img:"images/theme-preview-cyan.jpg",
+    colors:["#0a0a0c","#1a1a1e","#40d9c0","#ff3b30"],
+    desc:"Чёрный фон, бирюзовые исходящие, красные даты и имена. Современный минимализм." },
+  { id:"violet", name:"Dream Violet", file:"themes/dream-violet.attheme", img:"images/theme-preview-violet.jpg",
+    colors:["#0a0a0f","#1b1b24","#8b7bff","#ff3b30"],
+    desc:"Тёмная фиолетовая тема с ярким акцентом и красными подписями." },
+  { id:"mint", name:"Mint Green", file:"themes/mint-green.attheme", img:"images/theme-preview-cyan.jpg",
+    colors:["#090d0a","#172019","#3ddc84","#ff3b30"],
+    desc:"Тёмная тема в мятно-зелёных, спокойный современный вид." },
+  { id:"amber", name:"Sunset Amber", file:"themes/sunset-amber.attheme", img:"images/theme-preview-amber.jpg",
+    colors:["#100d0a","#1d1710","#ffb347","#ff6b47"],
+    desc:"Тёплая янтарная тема с огненным акцентом." },
+  { id:"frost", name:"Frost Blue", file:"themes/frost-blue.attheme", img:"images/theme-preview-frost.jpg",
+    colors:["#080c11","#152229","#5ac8ff","#ff5a5a"],
+    desc:"Ледяная синяя тема с металлическим холодным оттенком." }
+];
+document.getElementById('themes-count').textContent = THEMES.length + ' тем';
+
+const picker = document.getElementById('picker-list');
+picker.innerHTML = THEMES.map(t =>
+  '<button class="pick" data-id="'+t.id+'">'+
+    '<div class="pick-swatches">'+t.colors.map(c=>'<i style="background:'+c+'"></i>').join('')+'</div>'+
+    '<div class="pick-name">'+t.name+'</div>'+
+  '</button>').join('');
+
+const grid = document.getElementById('themes-grid');
+grid.innerHTML = THEMES.map(t =>
+  '<div class="card">'+
+    '<div class="card-top"><span class="card-cat">Telegram · .attheme</span></div>'+
+    '<div class="card-title">'+t.name+'</div>'+
+    '<div class="card-desc">'+t.desc+'</div>'+
+    '<div class="pick-swatches">'+t.colors.map(c=>'<i style="background:'+c+'"></i>').join('')+'</div>'+
+    '<div class="card-foot">'+
+      '<span class="card-meta">'+t.file.replace('themes/','')+'</span>'+
+      '<a class="btn btn-primary btn-xs" href="'+t.file+'" download>Скачать</a>'+
+    '</div>'+
+  '</div>').join('');
+
+picker.addEventListener('click', e => {
+  const btn = e.target.closest('.pick'); if(!btn) return;
+  document.querySelectorAll('.pick').forEach(b=>b.classList.toggle('active', b===btn));
+});
+</script>
+</body>
+</html>

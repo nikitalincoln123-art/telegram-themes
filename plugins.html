@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Каталог плагинов — TGThemes</title>
+<meta name="description" content="Каталог плагинов .plugin для ExtraGram и AyuGram: интерфейс, анимации, медиа, утилиты. Стартовый шаблон для своих разработок.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="container">
+    <div class="brand">TG<span>Themes</span><em>.io</em></div>
+    <nav>
+      <a href="index.html#themes">Темы</a>
+      <a href="themes.html">Темы</a>
+      <a href="index.html#make">Создать</a>
+      <a href="index.html#howto">Установка</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="plugins/starter-template.plugin" download>Шаблон</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">Каталог плагинов</div>
+    <h1>Плагины для <span class="accent-grad">ExtraGram и AyuGram</span></h1>
+    <p>Модули <code>.plugin</code> на Python. Расширяют клиент: интерфейс, анимации, медиа, утилиты. Всё без root.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><h2>Все плагины</h2><span class="card-meta" id="plugins-count">…</span></div>
+
+    <div class="card" style="margin-bottom:24px; border-color:var(--accent)">
+      <div class="card-top">
+        <span class="card-cat">Стартовый шаблон</span>
+        <span class="card-tag">Наш пример · v1.0.0</span>
+      </div>
+      <div class="card-title">Starter Template</div>
+      <div class="card-desc">Готовый шаблон плагина для ExtraGram/AyuGram с рабочим примером — меняет акцентный цвет интерфейса. Формат: Python-модуль с метаданными (__id__, __name__, __author__, __version__) и классом BasePlugin. Идеален, чтобы начать свои разработки. Рядом лежит исходник .plugin.py для изучения.</div>
+      <div class="card-foot">
+        <span class="card-meta">plugins/starter-template.plugin</span>
+        <div style="display:flex;gap:8px">
+          <a class="btn btn-ghost btn-xs" href="plugins/starter-template.plugin.py" download>Исходник</a>
+          <a class="btn btn-primary btn-xs" href="plugins/starter-template.plugin" download>Скачать</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid" id="plugins-grid"></div>
+  </div>
+</section>
+
+<footer class="foot"><div class="container">TGThemes.io · Каталог тем и плагинов для Telegram, ExtraGram, AyuGram</div></footer>
+
+<script>
+const PLUGINS = [
+  { name:"MonoColor UI", cat:"Интерфейс", ver:"1.7", author:"@limeplug",
+    desc:"Перекрашивает интерфейс в один тон: аватарки, истории, списки чатов — всё одного цвета." },
+  { name:"Media Glow", cat:"Интерфейс", ver:"1.3", author:"@itskotovski @mishabotov",
+    desc:"Ambilight-свечение по краям полноэкранных фотографий и видео." },
+  { name:"Text Animation", cat:"Анимации", ver:"11.0", author:"@itskotovski @mishabotov",
+    desc:"Живой набор текста: появление букв, скольжение, масштаб, вращение, частицы (DEX Core)." },
+  { name:"Plugins Tab", cat:"Интерфейс", ver:"1.3.1", author:"@limeplug",
+    desc:"Добавляет отдельный пункт «Плагины» прямо в нижнюю панель навигации." }
+];
+document.getElementById('plugins-count').textContent = (PLUGINS.length+1) + ' позиций';
+document.getElementById('plugins-grid').innerHTML = PLUGINS.map(p =>
+  '<div class="card">'+
+    '<div class="card-top"><span class="card-cat">'+p.cat+'</span></div>'+
+    '<div class="card-title">'+p.name+'</div>'+
+    '<div class="card-desc">'+p.desc+'</div>'+
+    '<div class="card-foot">'+
+      '<span class="card-meta">'+p.author+' · v'+p.ver+'</span>'+
+      '<a class="btn btn-ghost btn-xs" href="index.html#make">Скоро</a>'+
+    '</div>'+
+  '</div>').join('');
+</script>
+</body>
+</html>
