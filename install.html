@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Как установить — TGThemes</title>
+<meta name="description" content="Пошаговая инструкция по установке тем (.attheme) и плагинов (.plugin) в Telegram, ExtraGram и AyuGram.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="container">
+    <div class="brand">TG<span>Themes</span><em>.io</em></div>
+    <nav>
+      <a href="index.html#themes">Темы</a>
+      <a href="plugins.html">Плагины</a>
+      <a href="install.html">Как установить</a>
+      <a href="index.html#make">Создать</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="themes.html">Смотреть темы</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">Гайд за 2 минуты</div>
+    <h1>Как <span class="accent-grad">установить</span></h1>
+    <p>Темы и плагины ставятся за три шага. Следуй картинкам — не потеряешься.</p>
+  </div>
+</section>
+
+<!-- TABS -->
+<section class="section tab-section">
+  <div class="container">
+    <div class="tab-bar">
+      <button class="tab active" data-tab="theme">Тема (.attheme)</button>
+      <button class="tab" data-tab="plugin">Плагин (.plugin)</button>
+    </div>
+
+    <!-- THEME STEPS -->
+    <div class="tab-panel active" id="tab-theme">
+      <div class="steps-col">
+        <div class="step-card">
+          <div class="step-img"><img src="images/howto-1-download.jpg" alt="Скачать тему"></div>
+          <div class="step-body">
+            <div class="step-tag">Шаг 1</div>
+            <h3>Скачай файл темы</h3>
+            <p>Нажми на странице темы кнопку <b>«Скачать»</b>. Скачается файл с расширением <code>.attheme</code>. Он появится в загрузках телефона.</p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-img"><img src="images/howto-2-saved.jpg" alt="Отправить в избранное"></div>
+          <div class="step-body">
+            <div class="step-tag">Шаг 2</div>
+            <h3>Отправь себе в Telegram</h3>
+            <p>Открой Telegram, перейди в <b>«Избранное»</b> (Saved Messages) и отправь туда файл <code>.attheme</code> — обычным вложением.</p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-img"><img src="images/howto-3-apply.jpg" alt="Применить тему"></div>
+          <div class="step-body">
+            <div class="step-tag">Шаг 3</div>
+            <h3>Нажми «Применить»</h3>
+            <p>Открой вложенный файл в Избранном. Telegram покажет превью темы и кнопку <b>«Применить»</b> — нажми её. Готово, тема активна.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLUGIN STEPS -->
+    <div class="tab-panel" id="tab-plugin">
+      <div class="steps-col">
+        <div class="step-card">
+          <div class="step-img"><img src="images/howto-1-download.jpg" alt="Скачать плагин"></div>
+          <div class="step-body">
+            <div class="step-tag">Шаг 1</div>
+            <h3>Скачай файл плагина</h3>
+            <p>Нажми «Скачать» на странице плагина — получишь файл с расширением <code>.plugin</code>.</p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-img"><img src="images/howto-2-saved.jpg" alt="Переслать в клиент"></div>
+          <div class="step-body">
+            <div class="step-tag">Шаг 2</div>
+            <h3>Открой его в ExtraGram/AyuGram</h3>
+            <p>Запусти клиент, открой <b>Настройки → Плагины</b>, нажми <b>«Добавить плагин»</b>/<code>+</code> и выбери скачанный файл.</p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-img"><img src="images/howto-4-plugin.jpg" alt="Включить плагин"></div>
+          <div class="step-body">
+            <div class="step-tag">Шаг 3</div>
+            <h3>Включи переключатель</h3>
+            <p>После добавления включи тумблер рядом с плагином. Если нужна библиотека (например, ZwyLib) — сначала установи её.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="notice">
+        <b>Почему нет автоматической установки?</b>
+        <span>Telegram показывает экран подтверждения перед применением темы/плагина. Это встроенная защита — её нельзя обойти. Так что ручной клик всегда нужен.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot"><div class="container">TGThemes.io · Каталог тем и плагинов для Telegram, ExtraGram, AyuGram</div></footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
