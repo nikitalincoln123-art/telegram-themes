@@ -1,0 +1,66 @@
+__id__ = "ui_template"
+__name__ = "UI Template"
+__description__ = "Рабочий UI-шаблон плагина для ExtraGram/AyuGram: добавляет пункт в настройки и показывает свой диалог-экран. Без DEX, чистый Python."
+__author__ = "TGThemes"
+__version__ = "1.0.0"
+__icon__ = "emoji/1f4d6"
+__app_version__ = ">=12.5.1"
+__sdk_version__ = ">=1.4.0"
+
+from base_plugin import BasePlugin
+from java import jclass
+from org.telegram.messenger import ApplicationLoader
+from org.telegram.ui.ActionBar import AlertDialog
+from ui.settings import Header, Text, Switch
+
+
+class UiTemplatePlugin(BasePlugin):
+    """UI-шаблон для ExtraGram/AyuGram.
+
+    Это объясняющий каркас, который реально запускается:
+
+    - on_plugin_load()   -- вызывается при включении плагина
+    - on_plugin_unload() -- при выключении
+    - create_settings()  -- добавляет элементы в настройки плагина
+    - _show_dialog()     -- открывает свой маленький экран (диалог)
+
+    Замена встроенных иконок интерфейса требует DEX-байткода.
+    """
+
+    def on_plugin_load(self):
+        self.log("UI Template: плагин загружен")
+
+    def on_plugin_unload(self):
+        self.log("UI Template: плагин выгружен")
+
+    def create_settings(self):
+        return [
+            Header(text="UI Template"),
+            Text(
+                text="Показать мой экран",
+                subtext="Открывает свой диалог (нажми)",
+                on_click=self._show_dialog,
+            ),
+            Switch(
+                key="enabled",
+                text="Включить демо",
+                default=True,
+                subtext="Пример переключателя с сохранением",
+                on_change=self._on_switch,
+            ),
+        ]
+
+    def _show_dialog(self):
+        context = ApplicationLoader.applicationContext
+        builder = AlertDialog.Builder(context)
+        builder.setTitle("UI Template")
+        builder.setMessage(
+            "Это собственный экран плагина. Здесь можно показать "
+            "свой интерфейс, список или форму."
+        )
+        builder.setPositiveButton("OK", None)
+        dialog = builder.create()
+        dialog.show()
+
+    def _on_switch(self, value, *args):
+        self.log("UI Template: переключатель = %s" % value)
