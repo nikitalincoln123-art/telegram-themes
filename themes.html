@@ -44,6 +44,21 @@
 
 <script>
 const THEMES = [
+  { id:"glass", name:"Glass", file:"themes/glass.attheme", img:"images/theme-preview-glass.jpg",
+    colors:["#18181c","#2b2b32","#8a8a92"],
+    desc:"Полупрозрачные «стеклянные» пузыри, светлые контуры, матовый фон." },
+  { id:"minimal", name:"Minimal", file:"themes/minimal.attheme", img:"images/theme-preview-minimal.jpg",
+    colors:["#0e0e10","#ffffff"],
+    desc:"Почти чёрный фон, тонкие обводки, только белый и серый." },
+  { id:"gold", name:"Gold Monochrome", file:"themes/gold.attheme", img:"images/theme-preview-gold.jpg",
+    colors:["#C9A227","#222222","#F2F3F5"],
+    desc:"Монохромная ч/б база с золотым акцентом: ссылки, статус и кнопки в золоте." },
+  { id:"lavender", name:"Lavender", file:"themes/lavender.attheme", img:"images/theme-preview-lavender.jpg",
+    colors:["#1a1a22","#b9a7e6","#f0f0f4"],
+    desc:"Мягкий тёмный фон с приглушённым лавандово-фиолетовым акцентом." },
+  { id:"emerald", name:"Emerald", file:"themes/emerald.attheme", img:"images/theme-preview-emerald.jpg",
+    colors:["#111b1a","#63d9b0","#e8f2ef"],
+    desc:"Тёмный фон с приглушённым изумрудно-зелёным акцентом." }
 ];
 document.getElementById('themes-count').textContent = THEMES.length + ' тем';
 
